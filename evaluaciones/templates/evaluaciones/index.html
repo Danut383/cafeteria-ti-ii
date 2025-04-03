@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cafeterías TEC Colima</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hover-scale { transition: transform .3s ease; }
+        .hover-scale:hover { transform: scale(1.05); }
+        .fade-in { animation: fadeIn 1s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-green-50">
+
+    <!-- Header con Logo -->
+    <header class="flex justify-center items-center py-6 shadow-lg bg-white">
+        <img src="/static/logo.png" alt="Logo Cafetería" class="h-20">
+    </header>
+
+    <!-- Selección Cafetería -->
+    <section class="container mx-auto my-12 px-6 fade-in">
+        <h2 class="text-3xl font-bold text-center mb-8 text-green-700">Selecciona tu cafetería</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Cafetería Norte -->
+        <a href="{% url 'cafeteria_norte' %}" class="hover-scale block bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+            <img src="/static/cafeteria_norte.jpg" alt="Cafetería Norte" class="w-full h-64 object-cover">
+            <div class="bg-green-600 text-white py-4 text-center text-xl font-semibold">Cafetería Norte</div>
+        </a>
+
+        <!-- Cafetería Sur -->
+        <a href="{% url 'cafeteria_sur' %}" class="hover-scale block bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+            <img src="/static/cafeteria_sur.jpg" alt="Cafetería Sur" class="w-full h-64 object-cover">
+            <div class="bg-green-600 text-white py-4 text-center text-xl font-semibold">Cafetería Sur</div>
+        </a>
+
+
+        </div>
+    </section>
+
+    <!-- Sección Ejemplo de Comidas -->
+    <section class="container mx-auto my-16 px-6 fade-in">
+        <h3 class="text-2xl font-bold mb-6 text-green-700">Menú Popular</h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+            <div class="hover-scale bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+                <img src="/static/comida_dia.jpg" alt="Comida del día">
+                <div class="p-4 text-center font-medium text-gray-700">Comida del día</div>
+            </div>
+
+            <div class="hover-scale bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+                <img src="/static/tortas.jpg" alt="Tortas">
+                <div class="p-4 text-center font-medium text-gray-700">Tortas</div>
+            </div>
+
+            <div class="hover-scale bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+                <img src="/static/bowls.jpg" alt="Bowls">
+                <div class="p-4 text-center font-medium text-gray-700">Bowls</div>
+            </div>
+
+            <div class="hover-scale bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+                <img src="/static/hamburguesas.jpg" alt="Hamburguesas">
+                <div class="p-4 text-center font-medium text-gray-700">Hamburguesas</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-6 text-center">
+        &copy; 2024 Cafeterías TEC Colima. Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>
